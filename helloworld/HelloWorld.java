@@ -9,12 +9,22 @@
 /* Java修饰符 */
 // 访问控制修饰符：default, public, protected, private
 // 非访问控制修饰符：final, abstract, static, synchronized
+//     static 关键字可以用来声明独立于对象的静态方法。静态方法不能使用类的非静态变量。静态方法从参数列表得到数据，然后计算这些数据。
+//     final 表示"最后的、最终的"含义，变量一旦赋值后，不能被重新赋值。被 final 修饰的实例变量必须显式指定初始值
+//     abstract 抽象类不能用来实例化对象，声明抽象类的唯一目的是为了将来对该类进行扩充。任何继承抽象类的子类必须实现父类的所有抽象方法，除非该子类也是抽象类。
+//     synchronized 关键字声明的方法同一时间只能被一个线程访问
 
 
 /* Java变量 */
 // 局部变量：在方法、构造方法或者语句块中定义的变量，声明和初始化都是在方法中，方法结束后，变量自动销毁
-// 类变量（静态变量）：类变量声明在类中，方法体之外，但必须声明为 static 类型。
-// 成员变量（非静态变量）：定义在类中且方法体之外的变量。
+//          局部变量是在栈上分配的，且没有默认值，必须舒适化后，才能使用。
+// 类变量（静态变量）：类变量声明在类中，方法体之外，但必须声明为 static 类型
+//          无论一个类创建了多少个对象，类只拥有类变量的一份拷贝
+//          静态变量除了被声明为常量外很少使用，存储在静态存储区
+//          在第一次被访问时创建，在程序结束时销毁
+//          静态变量可以通过 ClassName.VariableName的方式访问
+// 成员变量（非静态变量）：定义在类中且方法体之外的变量
+//          成员变量在对象创建的时候创建，在对象被销毁的时候销毁，具有默认值
 
 
 /* Java继承 */
@@ -102,6 +112,45 @@
 // 隐含的强制类型转换
 //     整数的默认类型是 int
 //     浮点型不存在这种情况，因为在定义 float 类型时必须在数字后面跟上 F 或者 f
+
+
+/* Java instanceof 运算符 */
+// 该运算符用于操作对象实例，检查该对象是否是一个特定类型
+// 比如：String name = "James";  boolean result = name instanceof String; // 由于 name 是 String 类型，所以返回真
+
+
+/* Java Number & Math类 */
+// 一般地，当需要使用数字的时候，我们通常使用内置数据类型，如：byte、int、long、double 等
+// 然而，在实际开发过程中，我们经常会遇到需要使用对象，而不是内置数据类型的情形
+// Java 语言为每一个内置数据类型提供了对应的包装类
+// 所有的包装类（Integer、Long、Byte、Double、Float、Short）都是抽象类 Number 的子类
+// 包装类和基本数据类型的对应关系，首字母大写的为包装类
+//     Boolean对应boolean, Byte对应byte, Short对应short, Integer对应int,
+//     Long对应long, Character对应char, Float对应float, Double对应double
+// Java Math类包含了用于执行基本数学运算的属性和方法，如初等指数、对数、平方根和三角函数
+// Math 的方法都被定义为 static 形式，通过 Math 类可以在主函数中直接调用
+// 比如 Math.sin(Math.PI/2)
+// ceil()返回大于等于给定参数的最小整数，向上取整
+// floor()返回小于等于给定参数的最大整数，向下取整
+// round()四舍五入，算法为 Math.floor(x+0.5)，即将原来的数字加上0.5后再向下取整
+
+
+/* Java Character类 */
+// 类似于Number类的作用
+
+
+/* Java String类 */
+// 字符串广泛应用 在 Java 编程中，在 Java 中字符串属于对象，Java 提供了 String 类来创建和操作字符串
+// String 类是不可改变的，所以你一旦创建了 String 对象，那它的值就无法改变了
+// 如果需要对字符串做很多修改，那么应该选择使用 StringBuffer & StringBuilder 类。
+
+
+/* Java StringBuffer 和 StringBuilder 类 */
+// 当对字符串进行修改的时候，需要使用 StringBuffer 和 StringBuilder 类
+// 和 String 类不同的是，StringBuffer 和 StringBuilder 类的对象能够被多次的修改，并且不产生新的未使用对象
+// StringBuilder 类在 Java 5 中被提出，它和 StringBuffer 之间的最大不同在于 StringBuilder 的方法不是线程安全的
+// 由于 StringBuilder 相较于 StringBuffer 有速度优势，所以多数情况下建议使用 StringBuilder 类
+// 在应用程序要求线程安全的情况下，则必须使用 StringBuffer 类
 
 
 public class HelloWorld {
