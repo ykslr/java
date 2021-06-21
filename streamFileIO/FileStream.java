@@ -19,6 +19,39 @@
 //     必须保证该目录为空，否则删除失败
 
 
+/* Java Scanner 类 */
+// 我们可以通过 Scanner 类来获取用户的输入
+
+
+/* Java 异常处理 */
+// Exception类的层次
+//                         Throwable
+//                          /      \
+//                     Error        Exception
+//                    /     \        \        \
+//                   /       \       |         \
+//     OutofMemoryError  IOError  IOException  RuntimeException
+//                                    /                    \
+//                                FileNotFoundException   NullPointerException
+// 
+// Error用来指示运行时环境发生的错误，一般地，程序不会从错误中恢复
+// 使用 try 和 catch 关键字可以捕获异常
+// 如果一个方法没有捕获到一个检查性异常，那么该方法必须使用 throws 关键字来声明
+// throws 关键字放在方法签名的尾部
+// 也可以使用 throw 关键字抛出一个异常，无论它是新实例化的还是刚捕获到的
+// 一个方法可以声明抛出多个异常，多个异常之间用逗号隔开
+// finally 关键字用来创建在 try 代码块后面执行的代码块
+// 无论是否发生异常，finally 代码块中的代码总会被执行
+// 在 Java 中你可以自定义异常
+//     所有异常都必须是 Throwable 的子类
+//     如果希望写一个检查性异常类，则需要继承 Exception 类
+//     如果你想写一个运行时异常类，那么需要继承 RuntimeException 类
+// 通用异常
+//     JVM(Java虚拟机) 异常：由 JVM 抛出的异常或错误。例如：NullPointerException 类，ArrayIndexOutOfBoundsException 类，ClassCastException 类
+//     程序级异常：由程序或者API程序抛出的异常。例如 IllegalArgumentException 类，IllegalStateException 类
+
+
+
 import java.io.*;
 
 public class FileStream {
